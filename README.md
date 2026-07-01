@@ -7,7 +7,7 @@
 ## 🟢 已上線
 
 - **網站名稱**：7aDy.bug
-- **公開網址**：https://meganlin0000.github.io/7adybug/
+- **公開網址**：https://meganlin0000.github.io/ladybug/
 - **原始碼 repo**：https://github.com/Meganlin0000/7adybug （GitHub Pages）
 
 ### 之後要改內容 / 更新網站
