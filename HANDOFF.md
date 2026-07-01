@@ -1,6 +1,7 @@
 # 7aDy.bug 官網 · 完整交接與記憶檔
 
-> 這份檔案的用途:1) 給組員看懂整個網站怎麼運作、怎麼改;2) 給接手的人（或 AI）一次掌握全部脈絡。**要改東西前先讀這份。**
+> 用途:1) 給組員看懂網站怎麼運作、怎麼改;2) 給接手的人（或 AI）一次掌握全部脈絡。**動手前先讀這份。**
+> 最後更新:2026-07（v5 Brand Debug Lab，已上線根網域；配色已改封面紅黃藍、字距已放鬆）
 
 ---
 
@@ -9,8 +10,8 @@
 **7aDy.bug**（唸作 ladybug）＝ 淡江大學大眾傳播學系**第 41 屆畢業製作行銷組**的**招商官網**。
 目的:讓**企業/廠商**看完覺得「這組專業、有創意、值得合作」，願意找我們做整合行銷、社群內容、線下活動、O2O 展演。
 
-- 品牌概念:**Brand Debug Lab（品牌偵錯實驗室）** —— 名字是瓢蟲（ladybug）＋ Debug，「替品牌找出卡住成長的 bug，再把它修好」。
-- 風格:手作企劃檔案室 × 品牌診斷報告，活潑又專業。
+- 品牌概念:**Brand Debug Lab（品牌偵錯實驗室）**——名字＝瓢蟲（ladybug）＋ Debug，「替品牌找出卡住成長的 bug，再把它修好」。
+- 風格:手作企劃檔案室 × 品牌診斷報告，活潑又專業。主軸「抓 bug」貫穿全站，**別稀釋掉**（這是跟另一組 STONE9 最大的區隔）。
 
 ## 2. 網址與託管（重要）
 
@@ -20,18 +21,13 @@
 | 備援（舊網址，也還通） | https://meganlin0000.github.io/ladybug/ |
 
 - 託管:**GitHub Pages（免費）**，帳號 `Meganlin0000`。
-- **有兩個 repo，內容一樣**:
-  - `Meganlin0000/meganlin0000.github.io` → 正式根網址
-  - `Meganlin0000/ladybug` → 備援
-- 本機資料夾:`~/Desktop/7adybug-site/`，兩個 git remote:
-  - `origin` → ladybug repo
-  - `usersite` → meganlin0000.github.io repo
+- **兩個 repo，內容一樣**:`meganlin0000.github.io`（正式根網址）＋ `ladybug`（備援）。
+- 本機工作資料夾:**`~/Desktop/7adybug-site/`**（唯一，之前桌面那個 `meganlin0000.github.io/` 重複資料夾已被刪掉，不用管）。
+- git 有兩個 remote:`origin`→ladybug、`usersite`→meganlin0000.github.io。
 
 ## 3. 團隊與聯絡
 
-7 位成員（id 對應 `assets/team/0X.jpg`）:
-
-| id | 姓名 | 角色 |
+| id | 姓名 | 角色 |（照片＝`assets/team/0X.jpg`）
 |--|--|--|
 |01|吳苡榛|行銷企劃|
 |02|陳曉恩|行銷企劃|
@@ -41,89 +37,93 @@
 |06|賴欣妤|社群影音 / 公關|
 |07|李佩芹|社群影音 / 視覺設計|
 
-- Email:`77ady.bug@gmail.com`　IG:`@7ady.bug_`　電話:`0908 787 823`
-- ⚠️ 照片↔姓名對應是看照片配的，**請組員再核對一次有沒有配錯人**。
+Email `77ady.bug@gmail.com`｜IG `@7ady.bug_`｜電話 `0908 787 823`
+⚠️ 照片↔姓名是我看照片配的，**請組員再核對**。
 
 ## 4. 檔案結構
 
 ```
-7adybug-site/
-├── index.html        首頁（Hero 報告拼貼 → 品牌 bug → Debug 流程 → 服務 → 案例 → 方案 → CTA）
-├── about.html        團隊（故事、成員檔案卡、技能、經歷）
-├── works.html        作品案例（4 張 case file + 更多作品）
-├── services.html     服務與方案（6 服務 + 5 步流程 + 3 合作方向）
-├── contact.html      聯絡（品牌諮詢表單）
-├── member.html       單一成員頁（?id=01~07，內容由 members.js 帶入）
-├── 404.html          找不到頁面（5 秒自動回首頁）
-├── styles.css        全站樣式（設計系統，改配色來這）
-├── script.js         互動（GSAP 捲動動畫、Lenis 平滑捲動、成員卡/表單）
-├── members.js        ⭐ 七位成員的姓名/角色/介紹/專長（改文字來這）
-├── site.webmanifest  App 圖示設定
-├── assets/
-│   ├── favicon.svg / icon-192.png / icon-512.png / apple-touch-icon.png   網站圖示
-│   ├── og.png        分享到 LINE/IG/FB 會出現的預覽圖
-│   ├── og.svg        （og.png 的原始檔，要改分享圖才需要）
-│   └── team/01~07.jpg  七位成員照片
-├── README.md         快速入門
-└── HANDOFF.md        （這份）完整說明
+index.html     首頁（七區:Hero 報告拼貼→品牌bug memo→Debug 5步→服務→案例→合作方向→CTA）
+about.html     團隊（故事、成員檔案卡、技能、經歷）
+works.html     作品案例（4 案例卡 + 更多作品）
+services.html  服務與方案（6 服務 + 5步流程 + 3 合作方向）
+contact.html   聯絡（品牌諮詢表單，7 欄位）
+member.html    單一成員頁（?id=01~07，內容由 members.js 帶入）
+404.html       找不到頁面（5 秒自動回首頁）
+styles.css     ⭐ 全站樣式（改配色/間距來這，最上面 :root）
+script.js      互動（GSAP 捲動動畫、Lenis 平滑捲動、成員卡/表單/錨點捲動）
+members.js     ⭐ 七位成員的姓名/角色/介紹(bio)/專長(focus)（改成員文字來這）
+site.webmanifest / assets/（favicon、icon、og.png 分享圖、og.svg 原稿、team/01~07.jpg）
+README.md      快速入門　HANDOFF.md（這份）完整說明
 ```
 
-## 5. 設計系統（Brand Debug Lab）
+## 5. 設計系統（Brand Debug Lab · v5 現行）
 
-- **配色（取自履歷封面的紅黃藍）**，都定義在 `styles.css` 最上面 `:root`:
-  - 奶油底 `--cream:#f7f1e6`、紙白卡 `--paper:#fffdf7`、墨黑字 `--ink:#1e1e1e`
-  - **紅 `--red:#e5471e`、黃 `--yellow:#f4b41a`、藍 `--blue:#7fb2d4`**、綠 `--green:#6c8b45`
-- **字體**:標題/內文 Noto Sans TC；手寫裝飾 Caveat／志莽行書；報告標籤 Space Mono。
-- **手作元素**:紙張卡片（粗黑框＋位移陰影）、紅筆手繪圈選（`.circle`）、便利貼膠帶、資料夾標籤、FIXABLE 印章、Brand Bug Report 報告紙。
-- **特效**:GSAP + ScrollTrigger（捲動浮現）、Lenis（平滑捲動，只在電腦）。手機首屏已改成一載入就顯示（不靠捲動）。
+**配色（已改成 PDF 封面的紅黃藍，都在 `styles.css` `:root`）:**
+```
+--cream:#f7f1e6  奶油底   --paper:#fffdf7 紙白卡   --ink:#1e1e1e 墨黑
+--red:#e5471e    橘紅（圈選/標籤/按鈕/重點）
+--yellow:#f4b41a 金黃（便利貼）
+--blue:#a9cee1   柔和天空藍（← 已從 #7fb2d4 調淡，Megan 嫌太深）
+--green:#6c8b45  綠（呼應 ladybug/成長）  --gray:#e8e1d7
+```
+紅黃藍是**主色不是點綴**:memo 卡膠帶/上緣、服務卡編號 tab、案例檔案 tab、方案名牌、流程數字都**輪替紅黃藍**;方案「最受歡迎」卡是**藍底**。
+
+**字體:** 標題/內文 Noto Sans TC；手寫裝飾 Caveat／志莽行書（只當裝飾）；報告標籤 Space Mono。
+**⚠️ 標題已放鬆過**:`h1~h4` line-height **1.32**、letter-spacing **.01em**（**不要再加負字距**，中文會擠成一團——Megan 嫌過「字太擠」）。
+
+**手作元素:** 紙張卡片（粗黑框＋位移陰影）、紅筆手繪圈選 `.circle`（data-URI SVG）、便利貼膠帶、資料夾標籤、FIXABLE 印章、Brand Bug Report 報告紙。
+**特效:** GSAP+ScrollTrigger（捲動浮現）、Lenis（平滑捲動，**只在電腦**）。
 
 ## 6. 怎麼改常見內容
 
-- **改成員介紹/專長** → 開 `members.js`，每個人的 `bio`（介紹）和 `focus`（專長）直接改。
-- **換成員照片** → 把新照片蓋掉 `assets/team/0X.jpg`（建議 4:5 直式）。
-- **改頁面文字** → 直接開對應的 `.html` 改（結構在 HTML 裡）。
-- **改配色** → `styles.css` 的 `:root` 改 `--red / --yellow / --blue` 等。
-- **改方案/服務** → `services.html`（也在 `index.html` 有一份）。**價格目前刻意不公開**（寫「洽談後客製」）。
+- **成員介紹/專長** → `members.js`（`bio`、`focus`）。
+- **換成員照片** → 蓋掉 `assets/team/0X.jpg`（4:5 直式）。
+- **頁面文字** → 對應 `.html`。　**配色/間距** → `styles.css` `:root` 與標題規則。
+- **方案/服務** → `services.html`（首頁也有一份）。**價格刻意不公開**（寫「洽談後客製」）。
 
-## 7. 怎麼上線更新（每次都要做）
-
-在 `~/Desktop/7adybug-site/` 資料夾裡改完檔案後，**兩個 remote 都要 push**:
+## 7. 怎麼上線更新（⚠️ 兩個 remote 都要 push）
 
 ```bash
-git add -A
-git commit -m "更新內容"
-git push origin main      # 備援 repo
-git push usersite main    # 正式網址 repo
+cd ~/Desktop/7adybug-site
+git add -A && git commit -m "更新內容"
+git push origin main      # 備援
+git push usersite main    # 正式網址（少推這個 = 線上不會更新！）
 ```
+等 1~3 分鐘 GitHub Pages 自動重佈。本機預覽:`python3 -m http.server 8000` → `localhost:8000`。
+> 快取兇:改完看不到就手機完全關分頁重開，或網址加 `?v=數字`。
 
-推完等 1~3 分鐘，GitHub Pages 會自動重新發布。**只推一個的話兩個網址會不一致。**
+## 8. ⭐ 下一步改進 roadmap（2026-07 稽核結論，按影響力排序）
 
-本機預覽(不用上線就先看):在資料夾裡跑 `python3 -m http.server 8000`，瀏覽器開 `http://localhost:8000`。
+已對照專業 agency 案例頁標準稽核過，現況「概念/結構」夠好，**卡在「證據」與「節奏」**。要再上一階做這些:
 
-## 8. 待辦 / TODO
+1. **【最重要】案例加圖**——案例卡目前純文字，企業看不到任何作品畫面。每個案例補 1~3 張圖（IG 截圖/活動照/作品縮圖/提案視覺）。**需組員提供素材。**
+2. **打破單調**——目前每塊都是「奶油底＋白框方塊」，很膩。要:換區塊底色（放一段深色/色塊區製造節奏）、卡片做出變化（資料夾/便利貼/夾照片不只白方塊）。（我可做，不需素材）
+3. **戰績前置**——把 16.3K 等數字做成首屏附近的**數字帶**（16.3K 觸及／2 全國競賽／大學盃佳作／7 人）＋**合作/參與品牌 logo 牆**（泰山、阿瘦、淡江三大媒體、競賽主辦）。（我可做）
+4. **修 redundancy**——首頁服務/案例/方案跟分頁重複；首頁改精選 teaser＋「看全部」，完整留分頁。
+5. 小瑕疵:首頁主標「動。」、案例「懂。」孤字斷行;手機報告卡 FIXABLE 印章壓到字;`//` 灰色小標對比偏低。
+6. 招牌互動（加分）:紅筆圈選捲到才「自己畫出來」、報告清單 ✕「逐項打上去」像正在診斷。
+7. **成果寫太虛**:「累積…經驗」→ 能量化就量化，否則寫清楚交付物。
+8. 專業基建:**自訂網域**（`7adybug.com` 約 NT$300–500/年，最快變專業，可綁現站不用搬）、**Google Analytics**（免費）、SEO Organization schema、團體照當分享圖。
 
-- [ ] **團體照**:要放在團隊頁最上面當主視覺。目前檔案還沒進資料夾——請把團體照存成 `assets/team/group.jpg`，之後接上（首頁/團隊頁預留位置）。
-- [ ] 作品頁可再加**作品縮圖／IG／YouTube 連結**（目前是文字案例卡）。
-- [ ] 可選加的特效:紅筆圈選「自己畫出來」、Brand Bug Report 清單「逐項打叉」（最搭偵錯概念）。
-- [ ] 聯絡表單用 **formsubmit.co** 寄到 `77ady.bug@gmail.com`;**第一次有人送出時，Gmail 會收到一封啟用確認信，點一下之後才會正常收件。**
+## 9. 待辦 / 卡住的東西
 
-## 9. 幾個重要決定（別踩雷）
+- [ ] **團體照**:要放團隊頁/首頁當主視覺。**不在 PDF 裡**（PDF 只有 7 張個人照 800x1200），Megan 貼在對話裡的那張**沒存成檔、電腦也搜不到** → 要加必須先請她把圖另存成 `assets/team/group.jpg`。
+- [ ] 案例圖、logo 牆素材（見 roadmap 1、3）。
+- [ ] 聯絡表單走 **formsubmit.co**→`77ady.bug@gmail.com`;**第一次有人送出時 Gmail 會收到啟用信，點一下之後才會正常收件。**
 
-- **方案頁不放別組的案例**:履歷 PDF 的「預算方案」是用**其他組**（怪本室、七曜、HERstory…）的案子示意，**沒有放進網站**（冒用別人作品會傷信任）。網站只放 7aDy.bug 自己做過的（泰山、阿瘦、社群 16.3K、實習媒體）。
-- **價格不公開**:第一眼不秀價格，改成「依需求客製、洽談後報價」，比較像顧問型團隊。
-- **主軸是「抓 bug」**:整站用「找出品牌問題 → 解決」貫穿，這是跟另一組（STONE9，石頭風）最大的區隔，別稀釋掉。
+## 10. 重要決定（別踩雷）
 
-## 10. 設計演進史（給接手的人 / AI）
+- **方案不放別組案例**:履歷 PDF「預算方案」是別組（怪本室/七曜/HERstory…）的案子示意，**沒放進網站**（冒用會傷信任）。只放 7aDy.bug 自己做過的（泰山、阿瘦、社群 16.3K、實習媒體）。
+- **價格不公開**（洽談客製）。
+- **主軸「抓 bug」**貫穿全站。
 
-這網站改過很多版，Megan 的偏好已經很明確，**別走回頭路**:
-- v1 neubrutalism撞色 → 太像另一組、太亂 ❌
+## 11. 設計演進史（給接手者/AI——別走回頭路）
+
+- v1 neubrutalism撞色 → 太像別組、太亂 ❌
 - v2 極簡編輯襯線 → 太素「不好看」❌
 - v3 卡通圓角瓢蟲 → 沒質感、不喜歡卡通 ❌
 - v4 白底極簡專業 → 字太大、顏色不好看 ❌
-- **v5（現行）Brand Debug Lab** → 手作檔案室 + 紅黃藍活潑 ✅（照 Megan 完整指令做的）
+- **v5（現行）Brand Debug Lab** → 手作檔案室＋紅黃藍活潑 ✅（照 Megan 完整 brief 做，後續又調封面配色、淡藍、鬆字距）
 
-**Megan 要的 = 手作痕跡但專業、紅黃藍活潑、每一區讓企業看得懂能解決什麼問題。不要卡通、不要科技藍紫漸層、不要滿版粉紅、不要跟 STONE9 撞。**
-
----
-
-_最後更新:2026-07（v5 Brand Debug Lab，已上線根網域）_
+**Megan 要的＝手作痕跡但專業、紅黃藍活潑、每一區讓企業看得懂能解決什麼問題。不要卡通、不要科技藍紫漸層、不要滿版粉紅、不要跟 STONE9 撞、標題不要負字距。**
