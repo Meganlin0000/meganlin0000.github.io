@@ -4,6 +4,24 @@
 概念：**「我們幫品牌 Debug」**——瓢蟲（ladybug）× Debug，找出問題、解決問題。
 純靜態網站（HTML / CSS / vanilla JS），無任何框架、無需付費、無需伺服器。
 
+## 🟢 已上線
+
+- **網站名稱**：7aDy.bug
+- **公開網址**：https://meganlin0000.github.io/7adybug/
+- **原始碼 repo**：https://github.com/Meganlin0000/7adybug （GitHub Pages）
+
+### 之後要改內容 / 更新網站
+
+在 `7adybug-site/` 資料夾裡改好檔案後，執行：
+
+```bash
+git add -A
+git commit -m "更新內容"
+git push
+```
+
+推上去後 1–2 分鐘，網站會自動重新部署。
+
 ## 檔案結構
 
 ```
