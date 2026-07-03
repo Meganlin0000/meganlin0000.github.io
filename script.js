@@ -54,6 +54,27 @@
     });
   });
 
+  /* ---------- lightbox: click [data-zoom] image → fullscreen ---------- */
+  var lb = document.createElement('div');
+  lb.className = 'lightbox';
+  lb.innerHTML = '<img alt=""><span class="lb-tip">點任意處關閉 · ESC</span>';
+  document.body.appendChild(lb);
+  var lbImg = lb.querySelector('img');
+  document.addEventListener('click', function (e) {
+    var z = e.target.closest('[data-zoom]');
+    if (z) {
+      e.preventDefault();
+      lbImg.src = z.getAttribute('data-full') || z.src;
+      lb.classList.add('open');
+      if (lenis) lenis.stop();
+      return;
+    }
+    if (e.target.closest('.lightbox')) { lb.classList.remove('open'); lbImg.src = ''; if (lenis) lenis.start(); }
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && lb.classList.contains('open')) { lb.classList.remove('open'); lbImg.src = ''; if (lenis) lenis.start(); }
+  });
+
   /* ---------- team cards (personnel files) ---------- */
   function card(m) {
     return '<a class="person" href="member.html?id=' + m.id + '">'
