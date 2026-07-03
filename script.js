@@ -54,25 +54,32 @@
     });
   });
 
-  /* ---------- lightbox: click [data-zoom] image → fullscreen ---------- */
+  /* ---------- lightbox: [data-zoom] 圖片 / [data-video] YouTube / [data-embed] Drive 簡報·影片 ---------- */
   var lb = document.createElement('div');
   lb.className = 'lightbox';
-  lb.innerHTML = '<img alt=""><span class="lb-tip">點任意處關閉 · ESC</span>';
+  lb.innerHTML = '<div class="lb-stage"></div><span class="lb-tip">點旁邊空白處關閉 · ESC</span>';
   document.body.appendChild(lb);
-  var lbImg = lb.querySelector('img');
+  var stage = lb.querySelector('.lb-stage');
+  function lbOpen(html) { stage.innerHTML = html; lb.classList.add('open'); if (lenis) lenis.stop(); }
+  function lbClose() { lb.classList.remove('open'); stage.innerHTML = ''; if (lenis) lenis.start(); }
   document.addEventListener('click', function (e) {
-    var z = e.target.closest('[data-zoom]');
-    if (z) {
+    var t = e.target.closest('[data-zoom],[data-video],[data-embed]');
+    if (t) {
       e.preventDefault();
-      lbImg.src = z.getAttribute('data-full') || z.src;
-      lb.classList.add('open');
-      if (lenis) lenis.stop();
+      if (t.hasAttribute('data-video')) {
+        lbOpen('<iframe class="vid" src="https://www.youtube-nocookie.com/embed/' + t.getAttribute('data-video') + '?autoplay=1&rel=0" title="影片播放" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>');
+      } else if (t.hasAttribute('data-embed')) {
+        lbOpen('<iframe class="doc" src="' + t.getAttribute('data-embed') + '" title="內容預覽" allow="autoplay" allowfullscreen></iframe>');
+      } else {
+        var src = t.getAttribute('data-full') || t.src;
+        lbOpen('<img src="' + src + '" alt="">');
+      }
       return;
     }
-    if (e.target.closest('.lightbox')) { lb.classList.remove('open'); lbImg.src = ''; if (lenis) lenis.start(); }
+    if (e.target.classList && (e.target.classList.contains('lightbox') || e.target.classList.contains('lb-stage') || e.target.tagName === 'IMG' && e.target.closest('.lb-stage'))) lbClose();
   });
   document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && lb.classList.contains('open')) { lb.classList.remove('open'); lbImg.src = ''; if (lenis) lenis.start(); }
+    if (e.key === 'Escape' && lb.classList.contains('open')) lbClose();
   });
 
   /* ---------- team cards (personnel files) ---------- */
