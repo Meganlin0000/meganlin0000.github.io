@@ -111,7 +111,17 @@
       + '<div class="bio">' + m.bio.map(function (t) { return '<p>' + t + '</p>'; }).join('') + '</div>'
       + '<div class="member-block"><h4>專長</h4><div class="chips">'
       + m.focus.map(function (f, k) { return '<span class="chip' + (k === 0 ? ' solid' : '') + '">' + f + '</span>'; }).join('')
-      + '</div></div></div></div>'
+      + '</div></div>'
+      + (m.hi && m.hi.length ? '<div class="member-block"><h4>經歷亮點</h4><ul class="hi-list">'
+        + m.hi.map(function (h) { return '<li>' + h + '</li>'; }).join('') + '</ul></div>' : '')
+      + (m.works && m.works.length ? '<div class="member-block"><h4>作品連結（點了直接看）</h4><div class="media-links">'
+        + m.works.map(function (w) {
+            if (w.video) return '<span class="btn ghost mini" data-video="' + w.video + '">' + w.t + '</span>';
+            if (w.embed) return '<span class="btn ghost mini" data-embed="' + w.embed + '">' + w.t + '</span>';
+            if (w.zoom)  return '<span class="btn ghost mini" data-zoom data-full="' + w.zoom + '">' + w.t + '</span>';
+            return '<a class="btn ghost mini" href="' + w.href + '" target="_blank" rel="noopener">' + w.t + '</a>';
+          }).join('') + '</div></div>' : '')
+      + '</div></div>'
       + '<div class="member-nav"><a href="member.html?id=' + p.id + '">← ' + p.name + '</a>'
       + '<a href="member.html?id=' + n.id + '">' + n.name + ' →</a></div>';
   }

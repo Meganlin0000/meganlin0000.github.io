@@ -294,6 +294,10 @@ body.menu-open .menu-btn span:nth-child(3){transform:translateY(-7.5px) rotate(-
 .member-info .bio p{margin-bottom:.9em}
 .member-block{margin-top:28px}
 .member-block h4{font-family:var(--sans);font-size:.74rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+.hi-list{list-style:none;font-size:.96rem;color:var(--ink-2)}
+.hi-list li{padding:7px 0 7px 22px;position:relative;border-bottom:1px dashed var(--line)}
+.hi-list li::before{content:"✦";position:absolute;left:2px;color:var(--red);font-size:.8rem}
+.member-hero{align-items:start}
 .member-nav{display:flex;justify-content:space-between;border-top:2px solid var(--ink);padding:24px 0}
 .member-nav a{font-weight:700;color:var(--red-deep)}
 @media (max-width:760px){.member-hero{grid-template-columns:1fr;gap:24px}.member-photo{max-width:300px}}
