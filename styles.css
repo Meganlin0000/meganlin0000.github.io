@@ -145,7 +145,6 @@ body.menu-open .menu-btn span:nth-child(3){transform:translateY(-7.5px) rotate(-
 /* Brand Bug Report collage */
 .report{background:var(--paper);border:2px solid var(--ink);box-shadow:6px 8px 0 rgba(30,30,30,.14),0 20px 40px -22px rgba(30,30,30,.5);
   padding:28px 26px 30px;transform:rotate(1.3deg);position:relative}
-.report::after{content:"CONFIDENTIAL";position:absolute;bottom:14px;right:16px;font-family:var(--mono);font-size:.6rem;letter-spacing:.2em;color:var(--muted);opacity:.6}
 .report .rhead{display:flex;align-items:baseline;justify-content:space-between;border-bottom:2px solid var(--ink);padding-bottom:10px;margin-bottom:16px}
 .report .rhead b{font-size:1.15rem;letter-spacing:-.01em}
 .report .rhead span{font-family:var(--mono);font-size:.68rem;color:var(--muted)}
