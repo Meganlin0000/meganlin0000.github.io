@@ -51,15 +51,15 @@ window.MEMBERS = [
       {t:"▶ 青春有影 AI 影片（佳作）", embed:"https://drive.google.com/file/d/1J5LIRsT_SxQiBiJsE5U153S6h-tKYsZ5/preview"},
       {t:"李宜臻作品集（Notion） ↗", href:"https://www.notion.so/_-361844597f3c8029b5bbf56f208de3f2"}
     ]},
-  { id:"06", name:"賴欣妤", role:"社群影音 / 公關", photo:"assets/team/06.jpg",
+  { id:"06", name:"賴欣妤", role:"影音社群兼客戶執行", photo:"assets/team/06.jpg",
     focus:["攝影策展","視覺美術","對外公關"],
-    bio:["開朗直率、點子多。負責社群影音與對外公關，曾任淡江影像藝術工坊第 114 學年度組長，規劃十餘種攝影課程與實作。",
+    bio:["開朗直率、點子多。負責影音社群與客戶執行，曾任淡江影像藝術工坊第 114 學年度組長，規劃十餘種攝影課程與實作。",
          "同時為顯影季視覺設計、2026 顯影季展出人，並擔任淡江網路新聞報記者。"],
     hi:["淡江影像藝術工坊 114 年度組長","顯影季視覺設計・2026 顯影季展出人","淡江網路新聞報記者｜多篇專題報導"],
     works:[
       {t:"攝影作品集（Google Drive） ↗", href:"https://drive.google.com/drive/folders/1H82Yvsmc9jdDTZynZgmmUBU-7yTps2vf"}
     ]},
-  { id:"07", name:"李佩芹", role:"社群影音 / 視覺設計", photo:"assets/team/07.jpg",
+  { id:"07", name:"李佩芹", role:"影音社群兼視覺設計", photo:"assets/team/07.jpg",
     focus:["影音剪輯","版面設計","活動預算"],
     bio:["活潑、認真負責。負責影音剪輯與版面設計，從古箏社成發整套視覺，到公視新聞部網路新聞組實習編輯，都能獨立完成。",
          "永續中心教育影片由她負責攝影與剪輯；也曾以 AI 協作完成個人鉤針作品網站。"],
