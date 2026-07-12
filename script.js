@@ -37,7 +37,7 @@
   }
 
   /* ---------- current nav ---------- */
-  var map = { home:'home.html', about:'about.html', works:'works.html', services:'services.html', contact:'contact.html', member:'about.html' };
+  var map = { home:'./', about:'about.html', works:'works.html', services:'services.html', contact:'contact.html', member:'about.html' };
   var page = document.body.getAttribute('data-page');
   if (map[page]) document.querySelectorAll('#nav-links a').forEach(function (a) {
     if (a.getAttribute('href') === map[page] && !a.classList.contains('navcta')) a.classList.add('current');
