@@ -61,9 +61,6 @@ strong{font-weight:700}
 /* red-pen underline */
 .penline{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 14'%3E%3Cpath d='M4 8 C50 3 150 12 196 6' fill='none' stroke='%23d9412e' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat left bottom/100% 8px;padding-bottom:8px}
 
-.kicker{display:inline-flex;align-items:center;gap:.6em;font-family:var(--sans);font-size:.78rem;font-weight:800;
-  letter-spacing:.1em;text-transform:uppercase;color:var(--red-deep)}
-.kicker::before{content:"//";color:var(--red)}
 
 .tag{display:inline-block;font-family:var(--mono);font-size:.72rem;font-weight:700;letter-spacing:.05em;
   background:var(--red);color:#fff;padding:3px 10px;transform:rotate(-1.5deg)}
@@ -74,8 +71,7 @@ strong{font-weight:700}
 .wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--edge)}
 .section{padding:clamp(64px,10vw,120px) 0;position:relative}
 .section-head{max-width:760px;margin-bottom:clamp(40px,5vw,64px)}
-.section-head .kicker{margin-bottom:20px}
-.section-head .lead{margin-top:16px}
+.section-head .section-head .lead{margin-top:16px}
 
 /* buttons */
 .btn{display:inline-flex;align-items:center;gap:.5em;font-family:var(--sans);font-weight:700;font-size:1rem;
@@ -296,6 +292,23 @@ body.menu-open .menu-btn span:nth-child(3){transform:translateY(-7.5px) rotate(-
 .form textarea{resize:vertical;min-height:110px}
 .form .btn{width:100%;justify-content:center;margin-top:8px}
 .form-note{font-size:.82rem;color:var(--muted);margin-top:14px}
+
+.grouplabel{font-size:.85rem;font-weight:800;color:var(--muted);letter-spacing:.08em;margin-bottom:14px}
+/* 五步驟流程進場 */
+.flow .step{opacity:0;transform:translateY(16px)}
+.flow.flow-in .step{opacity:1;transform:none;transition:opacity .55s ease,transform .55s cubic-bezier(.2,.7,.3,1)}
+.flow.flow-in .step:nth-child(1){transition-delay:.05s}
+.flow.flow-in .step:nth-child(2){transition-delay:.16s}
+.flow.flow-in .step:nth-child(3){transition-delay:.27s}
+.flow.flow-in .step:nth-child(4){transition-delay:.38s}
+.flow.flow-in .step:nth-child(5){transition-delay:.49s}
+.flow .step::after{opacity:0}
+.flow.flow-in .step::after{opacity:1;transition:opacity .35s ease}
+.flow.flow-in .step:nth-child(1)::after{transition-delay:.3s}
+.flow.flow-in .step:nth-child(2)::after{transition-delay:.41s}
+.flow.flow-in .step:nth-child(3)::after{transition-delay:.52s}
+.flow.flow-in .step:nth-child(4)::after{transition-delay:.63s}
+@media (prefers-reduced-motion:reduce){.flow .step,.flow .step::after{opacity:1!important;transform:none!important;transition:none!important}}
 
 /* CTA + footer */
 .cta .wrap{background:var(--red);border:2px solid var(--ink);box-shadow:8px 10px 0 rgba(30,30,30,.2);

@@ -147,6 +147,20 @@
   var reveals = Array.prototype.slice.call(document.querySelectorAll('.reveal'));
   function showAll() { reveals.forEach(function (el) { el.classList.add('in'); }); }
 
+  /* 五步驟流程:進視野後逐格亮起(獨立於 GSAP,兩種路徑都通) */
+  var flowEl = document.querySelector('.flow');
+  if (flowEl) {
+    var flowArm = function () { flowEl.classList.add('flow-in'); };
+    if (reduce || !('IntersectionObserver' in window)) { flowArm(); }
+    else if (flowEl.getBoundingClientRect().top < window.innerHeight * 0.92) { flowArm(); }
+    else {
+      var fio = new IntersectionObserver(function (es) {
+        es.forEach(function (e) { if (e.isIntersecting) { flowArm(); fio.disconnect(); } });
+      }, { rootMargin: '0px 0px -12% 0px' });
+      fio.observe(flowEl);
+    }
+  }
+
   if (reduce) {
     showAll();
     document.querySelectorAll('[data-count]').forEach(function (el) { el.textContent = (el.dataset.prefix || '') + el.dataset.count + (el.dataset.suffix || ''); });
